@@ -1,29 +1,26 @@
----
-import { Image } from 'astro:assets';
-import myImage from '../assets/avatar.png';
----
+<section class="mx-auto w-full flex flex-col items-center gap-8 text-center">
+  <h1 class="font-light text-9xl gap-4 text-black inline-flex flex-wrap">
+    Vasile Ropot
+  </h1>
 
-<section class="max-w-120 mx-auto w-full flex flex-col gap-4 text-center">
-  <div class="flex flex-col items-center justify-center gap-2">
-    <Image
-      class="size-20 rounded-4xl"
-      src={myImage}
-      alt="Avatar image of Vasile Ropot"
-    />
-    <div class="flex flex-col gap-1.5">
-      <h1 class="font-light text-2xl text-neutral-900">Vasile Ropot</h1>
-      <p class="font-extralight text-sm italic text-neutral-700">
-        Software Engineer, can center a div without AI.
-      </p>
+  <div
+    class="flex items-center gap-4 p-4 rounded-bl-md rounded-tl-2xl rounded-r-2xl"
+  >
+    <p class="font-extralight text-xl italic text-black/70">
+      Software Engineer, can center a div without AI.
+    </p>
+
+    <div class="bg-black size-11 flex items-center justify-center shrink-0">
+      <span class="bg-white size-4 -ml-2"></span>
     </div>
   </div>
 
   <span
     aria-hidden="true"
-    class="block h-px bg-linear-to-r from-transparent via-neutral-100 to-transparent"
+    class="block h-px bg-linear-to-r from-transparent via-black/5 to-transparent w-240 max-w-full"
   ></span>
 
-  <div class="flex items-center gap-5 flex-wrap justify-center">
+  <div class="flex gap-8 justify-center flex-wrap">
     {
       [
         'https://wa.me/ropotvs',
@@ -36,7 +33,7 @@ import myImage from '../assets/avatar.png';
           href={link}
           target="_blank"
           rel="noreferrer noopener"
-          class="text-sm font-extralight underline"
+          class="text-base font-extralight underline"
         >
           {link}
         </a>
