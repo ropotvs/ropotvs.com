@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import myImage from '../assets/avatar.png';
+---
+
+<div>
+  <Image src={myImage} alt="A description of my image." />
+
+  <h1>Vasile Ropot</h1>
+
+  <p>Software Engineer</p>
+
+  <div>
+    <a href="https://wa.me/ropotvs" target="_blank" rel="noopener noreferrer">
+      WhatsApp message
+    </a>
+    <a href="mailto:contact@ropotvs.com"> contact@ropotvs.com </a>
+  </div>
+
+  <div>
+    {
+      [
+        {
+          icon: <span class="size-4" />,
+          label: 'LinkedIn',
+          href: 'https://linkedin.com/in/ropotvs',
+        },
+      ].map((social) => (
+        <a
+          href={social.href}
+          target="_blank"
+          rel="noopener"
+          title={social.label}
+        >
+          {social.icon}
+        </a>
+      ))
+    }
+  </div>
+</div>
