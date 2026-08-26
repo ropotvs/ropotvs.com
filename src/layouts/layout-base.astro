@@ -1,0 +1,46 @@
+---
+import '../styles/style-base.css';
+
+type Props = {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+};
+
+const canonicalUrl = Astro.props.canonical
+  ? new URL(Astro.props.canonical, Astro.site).href
+  : undefined;
+
+const imageUrl = Astro.props.image
+  ? new URL(Astro.props.image, Astro.site).href
+  : undefined;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{Astro.props.title}</title>
+    <meta name="description" content={Astro.props.description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
+    <meta property="og:title" content={Astro.props.title} />
+    <meta property="og:description" content={Astro.props.description} />
+    <meta property="og:type" content="profile" />
+    {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
+    {imageUrl ? <meta property="og:image" content={imageUrl} /> : null}
+    <meta
+      name="twitter:card"
+      content={imageUrl ? 'summary_large_image' : 'summary'}
+    />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="flex flex-col font-sans antialiased min-h-dvh">
+    <main
+      class="flex flex-col justify-center flex-1 mx-auto max-w-100 px-5 py-8"
+    >
+      <slot />
+    </main>
+  </body>
+</html>
