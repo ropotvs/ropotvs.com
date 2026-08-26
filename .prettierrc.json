@@ -1,0 +1,20 @@
+{
+  "singleQuote": true,
+  "embeddedLanguageFormatting": "off",
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-organize-attributes",
+    "prettier-plugin-css-order"
+  ],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": { "parser": "astro", "embeddedLanguageFormatting": "auto" }
+    },
+    {
+      "files": "*.jsonc",
+      "options": { "trailingComma": "none" }
+    }
+  ]
+}
