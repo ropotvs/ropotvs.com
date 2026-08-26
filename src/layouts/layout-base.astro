@@ -1,6 +1,5 @@
 ---
 import '../styles/style-base.css';
-import FeatBlobs from '../feats/feat-blobs.astro';
 
 type Props = {
   title: string;
@@ -38,7 +37,6 @@ const imageUrl = Astro.props.image
     <meta name="generator" content={Astro.generator} />
   </head>
   <body class="flex flex-col font-sans antialiased min-h-dvh">
-    <FeatBlobs />
     <main class="flex flex-col justify-center flex-1 px-5 py-8">
       <slot />
     </main>
