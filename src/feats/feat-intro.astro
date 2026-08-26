@@ -4,44 +4,48 @@ import myImage from '../assets/avatar.png';
 ---
 
 <section
-  class="max-w-120 mx-auto w-full flex flex-col gap-4 rounded-4xl p-8 border border-neutral-200/40 outline-dashed outline-offset-8 outline-neutral-200/20 text-center"
+  class="max-w-120 mx-auto w-full p-2 border border-dashed border-neutral-200/40 bg-white/50 backdrop-blur-md rounded-4xl"
 >
-  <div class="flex flex-col items-center justify-center gap-2">
-    <Image
-      class="size-20 rounded-4xl"
-      src={myImage}
-      alt="Avatar image of Vasile Ropot"
-    />
-    <div class="flex flex-col gap-1">
-      <h1 class="font-light text-2xl text-neutral-900">Vasile Ropot</h1>
-      <p class="font-extralight text-sm italic text-neutral-700">
-        Software Engineer
-      </p>
+  <div
+    class="flex flex-col gap-4 p-8 border border-solid border-neutral-200/40 text-center rounded-4xl"
+  >
+    <div class="flex flex-col items-center justify-center gap-2">
+      <Image
+        class="size-20 rounded-4xl"
+        src={myImage}
+        alt="Avatar image of Vasile Ropot"
+      />
+      <div class="flex flex-col gap-1">
+        <h1 class="font-light text-2xl text-neutral-900">Vasile Ropot</h1>
+        <p class="font-extralight text-sm italic text-neutral-700">
+          Software Engineer
+        </p>
+      </div>
     </div>
-  </div>
 
-  <span
-    aria-hidden="true"
-    class="block h-px bg-linear-to-r from-transparent via-neutral-100 to-transparent"
-  ></span>
+    <span
+      aria-hidden="true"
+      class="block h-px bg-linear-to-r from-transparent via-neutral-100 to-transparent"
+    ></span>
 
-  <div class="flex items-center gap-3 flex-wrap justify-center">
-    {
-      [
-        'https://wa.me/ropotvs',
-        'https://linkedin.com/in/ropotvs',
-        'https://youtube.com/ropotvs',
-        'mailto:contact@ropotvs.com',
-      ].map((link) => (
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer noopener"
-          class="text-sm font-extralight underline"
-        >
-          {link}
-        </a>
-      ))
-    }
+    <div class="flex items-center gap-3 flex-wrap justify-center">
+      {
+        [
+          'https://wa.me/ropotvs',
+          'https://linkedin.com/in/ropotvs',
+          'https://youtube.com/ropotvs',
+          'mailto:contact@ropotvs.com',
+        ].map((link) => (
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer noopener"
+            class="text-sm font-extralight underline"
+          >
+            {link}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </section>
